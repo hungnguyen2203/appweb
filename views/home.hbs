@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEBSERVER</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <!-- <style>
+      
+    </style> -->
+  </head>
+  <body>
+    {{!-- <h3 style="font-size: medium">Hi {{name}}</h3> --}}
+    <div class="container">
+      <aside>
+        <div class="top">
+            <div class="logo">
+                <img src="./images/logo.png">
+                <h2>NHAN<span class="danger">HUNG</span></h2>
+            </div>
+            <div class="close" id="close-btn">
+                <span class="material-icons-sharp">close</span>
+            </div>
+        </div>
+        <div class="sidebar">
+            <ul>
+              <li><a href="/home" class="active"><span class="material-icons-sharp">home</span><h3>HOME</h3></a></li>
+              <li><a href="/dashboard1"><span class="material-icons-sharp">grid_view</span><h3>DASHBOARD</h3></a></li>
+              <!-- <li><a href="/dashboard2"><span class="material-icons-sharp">grid_view</span><h3>GATEWAY2</h3></a></li> -->
+              {{#if admin}}
+              <li><a href="/user"><span class="material-icons-sharp">person_outline</span><h3>USERS</h3></a></li>
+              <li><a><span class="material-icons-sharp">receipt_long</span><h3>REPORT</h3></a></li>
+              {{else}}
+        
+              {{/if}}
+              <li><a href="/"><span class="material-icons-sharp">logout</span><h3>LOGOUT</h3></a></li>
+            </ul>
+        </div>
+      </aside>
+  </body>
+</html>

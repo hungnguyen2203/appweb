@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEBSERVER</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        <div class="top">
+            <div class="logo">
+                <img src="./images/logo.png">
+                <h2>NHAN<span class="danger">HUNG</span></h2>
+            </div>
+            <div class="close" id="close-btn">
+                <span class="material-icons-sharp">close</span>
+            </div>
+        </div>
+        <div class="sidebar">
+            <!-- <a href="#">
+                <span class="material-icons-sharp">home</span>
+                <h3>HOME</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">grid_view</span>
+                <h3>DASHBOARD</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">devices</span>
+                <h3>DEVICES</h3>
+            </a>
+            <a href="#" class="active">
+                <span class="material-icons-sharp">person_outline</span>
+                <h3>USERS</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">receipt_long</span>
+                <h3>REPORT</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">logout</span>
+                <h3>LOGOUT</h3>
+            </a> -->
+            <ul>
+              <li><a href="/"><span class="material-icons-sharp">home</span><h3>HOME</h3></a></li>
+              <li><a href="/dashboard1"><span class="material-icons-sharp">grid_view</span><h3>GATEWAY1</h3></a></li>
+              <li><a href="/dashboard2" class="active"><span class="material-icons-sharp">grid_view</span><h3>GATEWAY2</h3></a></li>
+            </ul>
+        </div>
+      </aside>
+      <main>
+        <h1>DASHBOARD GATEWAY2</h1>
+        <div class="connection-status">
+          <h3>Connection Status: <span class="status">Disconnected</span></h3>
+        </div>
+        <h2>DEVICE NO.1</h2>
+        <div class="insights1">
+          <div class="temperature">
+            <div class="middle">
+              <div class="right">
+                <h3>Temperature</h3>
+                <h3 id="temperature1"></h3>
+              </div>
+              <div class="icon">
+                <span class="material-icons-sharp"> device_thermostat </span>
+              </div>
+            </div>
+          </div>
+          <!-- End of temperature1 -->
+          <div class="humidity">
+            <div class="middle">
+              <div class="right">
+                <h3>Humidity</h3>
+                <h3 id="humidity1"></h3>
+              </div>
+              <div class="icon">
+                <span class="material-icons-sharp">water_drop</span>
+              </div>
+            </div>
+          </div>
+          <!-- End of humidity1 -->
+        </div>
+        <h2>DEVICE NO.2</h2>
+        <div class="insights2">
+          <div class="temperature">
+            <div class="middle">
+              <div class="right">
+                <h3>Temperature</h3>
+                <h3 id="temperature2"></h3>
+              </div>
+              <div class="icon">
+                <span class="material-icons-sharp"> device_thermostat </span>
+              </div>
+            </div>
+          </div>
+          <!-- End of temperature1 -->
+          <div class="humidity">
+            <div class="middle">
+              <div class="right">
+                <h3>Humidity</h3>
+                <h3 id="humidity2"></h3>
+              </div>
+              <div class="icon">
+                <span class="material-icons-sharp">water_drop</span>
+              </div>
+            </div>
+          </div>
+          <!-- End of humidity1 -->
+        </div>
+        <!-- End of Insights -->
+        <!-- <div class="histories">
+          <h2>Historical Charts</h2>
+          <div class="history-charts">
+            <div id="temperature-history" class="history-divs"></div>
+            <div id="humidity-history" class="history-divs"></div>
+            <div id="pressure-history" class="history-divs"></div>
+            <div id="altitude-history" class="history-divs"></div>
+          </div>
+        </div> -->
+      </main>
+      <div class="right">
+        <div class="top">
+          <button id="menu-btn">
+            <span class="material-icons-sharp"> menu </span>
+          </button>
+          <div class="theme-toggler">
+            <span class="material-icons-sharp active"> light_mode </span>
+            <span class="material-icons-sharp"> dark_mode </span>
+          </div>
+        </div>
+        <!-- End of top -->
+        <div class="gauge-charts">
+          <h2>Gauge Charts</h2>
+          <div class="item">
+            <div id="temperature-gauge1"></div>
+          </div>
+          <div class="item">
+            <div id="humidity-gauge1"></div>
+          </div>
+          <div class="item">
+            <div id="temperature-gauge2"></div>
+          </div>
+          <div class="item">
+            <div id="humidity-gauge2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./index2.js"></script>
+    <script type="module" src="./mqttService.js"></script>
+  </body>
+</html>
